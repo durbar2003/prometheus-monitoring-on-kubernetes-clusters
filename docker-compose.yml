@@ -4,7 +4,9 @@ services:
    # FLASK_APP=server.py flask run -h 0.0.0 -p 5000
       container_name: python
       image: aimvector/python:1.0.0
-      build: ./python
+      build: 
+        context: ./python
+        target: dev
       working_dir: /work
       entrypoint: /bin/sh
       stdin_open: true
