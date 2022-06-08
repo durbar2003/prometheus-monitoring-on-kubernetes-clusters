@@ -1,0 +1,15 @@
+version: "3"
+services:
+   python: # sudo docker exec -it python sh
+   # FLASK_APP=server.py flask run -h 0.0.0 -p 5000
+      container_name: python
+      image: aimvector/python:1.0.0
+      build: ./python
+      working_dir: /work
+      entrypoint: /bin/sh
+      stdin_open: true
+      tty: true
+      volumes:
+         - ./python/src:/work
+      ports:
+         - 5000:5000
